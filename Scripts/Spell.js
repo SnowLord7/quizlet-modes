@@ -24,7 +24,7 @@ Spell.prototype.play = function () {
 		which: 27
 	});
 	(elem2 || elem1).dispatchEvent(event);
-}
+};
 
 Spell.prototype.input = () => {
     let elem1 = document.getElementById('js-spellInput'),
@@ -32,21 +32,21 @@ Spell.prototype.input = () => {
         elem3 = document.querySelector('textarea');
 
 	return elem2 || elem1 || elem3;
-}
+};
 
 Spell.prototype.alert = function () {
 	Alert(
 		'SnowLord\'s Quizlet Extension',
 		`<h2>Game Mode: Spell</h2>Thank you for using SnowLord7's Quizlet Exploit<br>Without you, this exploit wouldn't be possible.<br><h4>Instructions:</h4>Just wait for this script to finish!<br><br><button class="UIButton" type="button"><span class="UIButton-wrapper"><span>Inject</span></span></button>`
 	);
-}
+};
 
 Spell.prototype.hijack = function () {
 	let self = this;
 
 	Howl.prototype.oldPlay = Howl.prototype.play;
 	Howl.prototype.play = function () { self.solve(this); }
-}
+};
 
 Spell.prototype.enter = function () {
 	let event = new KeyboardEvent('keydown', {
@@ -59,7 +59,7 @@ Spell.prototype.enter = function () {
 		which: 13
 	});
 	this.input().dispatchEvent(event);
-}
+};
 
 Spell.prototype.solve = function (e) {
 	e.oldPlay();
@@ -90,4 +90,4 @@ Spell.prototype.solve = function (e) {
 			break;
 		}
 	}
-}
+};
