@@ -11,9 +11,51 @@ window.Answers = {
 		return false;
 	},
 
+	'get_assistant_data': function () {
+		let cards = Quizlet.assistantModeData.studiableData.studiableCardSides,
+			connections = Quizlet.assistantModeData.studiableData.studiableMediaConnections,
+			terms = {};
+
+		// Find connection from ID
+		const find_connection = id => connections.find(card => card.connectionModelId === id);
+
+		cards.forEach(card => {
+
+			let id = card.studiableItemId;
+
+			// Create term if not already created
+			if (terms[id] === undefined) terms[id] = {};
+
+			terms[id][card.label] = find_connection(card.id).text;
+
+		});
+
+		let formatted = [];
+		for (let id in terms) {
+
+			let term = terms[id];
+
+			formatted.push({
+				definition: term.definition.plainText,
+				definitionRichText: term.definition.richText,
+				word: term.word.plainText,
+				wordRichText: term.word.richText,
+				_definitionAudioUrl: term.definition.ttsUrl,
+				_definitionSlowTtsUrl: term.definition.ttsSlowUrl,
+				_definitionTtsUrl: term.definition.ttsUrl,
+				_wordAudioUrl: term.word.ttsUrl,
+				_wordSlowTtsUrl: term.word.ttsSlowUrl,
+				_wordTtsUrl: term.word.ttsUrl,
+				id
+			});
+		}
+
+		return formatted;
+	},
+
 	'get': function () {
 		if (Quizlet.assistantModeData !== undefined) {
-			return Quizlet.assistantModeData.terms;
+			return this.get_assistant_data();
 		} else if (Quizlet.learnGameData !== undefined) {
 			return Quizlet.learnGameData.allTerms;
 		} else if (Quizlet.testModeData !== undefined) {
