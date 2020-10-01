@@ -7,11 +7,11 @@ Quizlet is constantly updating their system, which will ruin user-scripts on a v
 
 There are normally two things that break the functionality of the code:
 
-## 1. Quizlet updates element identification (might be a current issue)
+## 1. Quizlet updates element identification
 
 In order to find various types of information in the page, you have to know what you are looking for. If Quizlet updates the content and changes around certain elements, then the script will be unable to find that element, and will most likely throw an error. Annoyingly, some things will not throw error, which makes debugging the problem a lot harder. In order to fix this, you need to locate the missing element, and find a way to identify it consistently.
 
-## 2. Quizlet changes the terms location (current issue for certain modes)
+## 2. Quizlet changes the terms location
 In order to find the answer to a question, obviously you need to know both the question and the correct answer. Luckily both of those things *should* be accessible. Normally, there is a global variable called `Quizlet` in this global variable a ton of useful information is stored. If Quizlet updates the location or name of this variable, the script will no longer be able to find need information, mainly the question answers. In the past, the question / answer information was easily accessible, but when debugging the extension today it seems as if Quizlet has completely revamped the old system. From a quick memory search, it seems like the answers are stored in `Quizlet.assistantModeData.studiableData`, but you will need to parse the question answer information together yourself.
 
 
