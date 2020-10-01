@@ -33,7 +33,7 @@ function update() {
 
 function request(url, callback) {
 	let req = new XMLHttpRequest();
-	req.open('GET', '/Scripts/' + url + '.js');
+	req.open('GET', 'Scripts/' + url + '.js');
 	req.onreadystatechange = function(e) {
 		if (this.status == 200 && this.readyState == 4) callback(req.responseText);
 		else if (this.status != 200 && this.readyState == 4) console.error(this);
