@@ -1,5 +1,5 @@
 # Preface
-I won't be updating this, but I decided it to release it to help people understand what the code is doing.
+I won't be developing this script very much, but I decided it to release it to help people understand what the code is doing. Feel free to submit issues and pull requests, I will be sure to check them out.
 
 Quizlet is constantly updating their system, which will ruin user-scripts on a very frequent basis. If you are going to be doing anything in the browser, like modifying or updating this code, you will almost certainly need to learn the basics of Javascript and HTML at the very least. You don't need much experience to read the code, but to fix or update it you need to have a basic understanding of the syntax. If you plan to just modify the script and fix the errors, it should be fairly easy unless Quizlet pull a fast 180.
 
