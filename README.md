@@ -34,4 +34,6 @@ All the other scripts are self-explanitory - they are named after the mode they 
 
 
 # Compiling the code
+`index.min.js` contains the minified and compiled source code for the most recent version.
+
 Run `index.html`, the compiled code will be generated in the textarea.
