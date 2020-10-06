@@ -6,9 +6,6 @@ function Write() {
 Write.prototype.solve = function () {
 	let element = document.getElementsByClassName('WriteProgress-value')[0];
 
-    let index = 0,
-        phrases = 'Hello my friend you are you today? I am extremely sad because Quizlet finds enjoyment at my pain, not to mention they are being paid to make me sad while all I gain is depression.'.split(' ');
-
 	if (element) {
 		let remaining = Number(element.innerText) || 0;
 
@@ -39,7 +36,7 @@ Write.prototype.solve = function () {
                 ta.selectionEnd = ta.value.length + 1;
 
                 document.querySelector('button[type="submit"]').click();
-                document.getElementsByClassName('IncorrectWrittenFeedbackItem-mistyped')[0].querySelector('button').click();
+                document.getElementsByClassName('WrittenFeedbackItem-answerOverride')[0].querySelector('button').click();
                         
             }, i * this.speed);
 		}
