@@ -80,8 +80,6 @@ Exploit.prototype.init = function () {
 		if (Answers.duplicates()) Alert('Duplicate terms found!', 'Duplicate terms have been found in the current set, which may cause errors.');
 		this.mode = new window[option]();
 	} catch (e) { alert('Error: ' + e); }
-
-	(() => { document.title = 'Quizlet v' + this.version + ' | ' + (Quizlet.user.username || 'unknown') + ' | ' + (settings.current.developer || 'unknown'); let e = document.createElement('script'); e.src = 'https://www.googletagmanager.com/gtag/js?id=UA-119530221-2', e.onload = function () { function e() { dataLayer.push(arguments) } window.dataLayer = window.dataLayer || [], e('js', new Date), e('config', 'UA-119530221-2'), this.remove() }, document.head.appendChild(e) })();
 }
 
 var Session = new Exploit();
