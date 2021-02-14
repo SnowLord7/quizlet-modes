@@ -1,4 +1,5 @@
 window.settings = {
+	// Default Settings
 	'default': {
 		'developer': 'Drew Snow',
 		'gravity': { 'score': 5000 },
@@ -8,6 +9,7 @@ window.settings = {
 		'night': false,
 		'test': { 'key': 67 }
 	},
+	// Current User Settings
     'current': {
 		'developer': 'Drew Snow',
 		'gravity': { 'score': 5000 },
@@ -19,6 +21,7 @@ window.settings = {
 	},
 	'fix': function () {
 		this.current = this.get();
+		// If settings are missing or incorrect, reset them 
 		if (typeof this.current.developer != 'string') this.current.developer = this.default.developer;
 		if (typeof this.current.gravity.score != 'number') this.current.gravity.score = this.default.gravity.score;
 		if (typeof this.current.learn.speed != 'number') this.current.learn.speed = this.default.learn.speed;
@@ -32,12 +35,15 @@ window.settings = {
 		this.save();
 	},
 	'reset': function () {
+		// reset settings
 		localStorage.setItem('extensionSettings', JSON.stringify(this.default));
 	},
 	'save': function () {
+		//save settings
 		localStorage.setItem('extensionSettings', JSON.stringify(this.current));
 	},
 	'get': function () {
+		// Get current user settings if they exist.
 		if (localStorage) {
             if (!localStorage.getItem('extensionSettings')) this.reset();
             return JSON.parse(localStorage.getItem('extensionSettings'));
