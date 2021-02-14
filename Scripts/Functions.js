@@ -74,15 +74,18 @@ function copyText(text) {
 		document.body.removeChild(input);
 	}
 }
-
-Object.defineProperty(String.prototype, 'hashCode', {
-    value: function () {
-        let hash = 0, chr;
-        for (let i = 0; i < this.length; ++i) {
-            chr = this.charCodeAt(i);
-            hash = ((hash << 5) - hash) + chr;
-            hash |= 0;
-        }
-        return hash;
-    }
-});
+try {
+	Object.defineProperty(String.prototype, 'hashCode', {
+		value: function () {
+			let hash = 0, chr;
+			for (let i = 0; i < this.length; ++i) {
+				chr = this.charCodeAt(i);
+				hash = ((hash << 5) - hash) + chr;
+				hash |= 0;
+			}
+			return hash;
+		}
+	});
+} catch (error) {
+	console.error(error);
+}
