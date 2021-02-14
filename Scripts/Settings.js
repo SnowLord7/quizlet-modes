@@ -1,7 +1,7 @@
 window.settings = {
 	'default': {
 		'developer': 'Drew Snow',
-		'gravity': { 'score': 4294967295 },
+		'gravity': { 'score': 5000 },
 		'learn': { 'speed': 100 },
 		'live': { 'answerDelay': 100, 'autoAnswer': true, 'displayAnswer': true, 'key': 67 },
 		'match': { 'time': 0.5 },
@@ -10,7 +10,7 @@ window.settings = {
 	},
     'current': {
 		'developer': 'Drew Snow',
-		'gravity': { 'score': 4294967295 },
+		'gravity': { 'score': 5000 },
 		'learn': { 'speed': 100 },
 		'live': { 'answerDelay': 100, 'autoAnswer': true, 'displayAnswer': true, 'key': 67 },
 		'match': { 'time': 0.5 },
