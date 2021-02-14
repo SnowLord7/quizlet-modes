@@ -11,20 +11,10 @@ Write.prototype.solve = function () {
 
 		for (let i = 0; i < remaining; i++) {
 			setTimeout(() => {
-				
-                let index = 0,
-                    phrases = 'Hello my friend you are you today? I am extremely sad because Quizlet finds enjoyment at my pain, not to mention they are being paid to make me sad while all I gain is depression.'.split(' ');
-
                 let ta = document.querySelector('textarea'),
-                    value = ' ' + phrases[index];
-
+                    value;
                 if (!ta) return;
-
-                index++;
-                if (index > phrases.length) index = 0;
-
                 ta.focus();
-
                 let val = Object.getOwnPropertyDescriptor(ta.constructor.prototype, 'value');
                 (null == val ? void 0 : val.set) ? val.set.call(ta, value) : ta.value = value;
 
